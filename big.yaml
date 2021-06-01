@@ -1,0 +1,41 @@
+# big.yaml
+
+save_data: /workspace/big/run/example
+src_vocab: /workspace/big/run/example.vocab.src
+tgt_vocab: /workspace/big/run/example.vocab.tgt
+overwrite: False
+
+log_file: logtrain.log
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: /workspace/big/BIG_src-train.txt
+        path_tgt: /workspace/big/BIG_tgt-train.txt
+    valid:
+        path_src: /workspace/big/BIG_src-val.txt
+        path_tgt: /workspace/big/BIG_tgt-val.txt
+
+world_size: 1
+gpu_ranks: [0]
+
+save_model: /workspace/big/run/model
+save_checkpoint_steps: 500
+
+train_steps: 24000
+valid_steps: 500
+
+enc_rnn_size: 300
+dec_rnn_size: 300
+
+tgt_word_vec_size: 200
+src_word_vec_size: 200
+
+seed: 1234
+
+heads: 5
+dropout: .5
+start_decay_steps: 10000
+decay_steps: 1000
+learning_rate_decay: 0.8
+
